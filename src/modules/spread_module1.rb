@@ -19,19 +19,11 @@ module SpreadModule1
   end
 
   def get_row(index)
-    if @inverse
-      @cells.transpose[index]
-    else
-      @cells[index]
-    end
+    @inverse ? @cell.transpose[index] : @cell[index]
   end
 
   def get_col(index)
-    if @inverse
-      @cells[index]
-    else
-      @cells.transpose[index]
-    end
+    @inverse ? @cell[index] : @cell.transpose[index]
   end
 
   def insert_row(index, row = nil)
